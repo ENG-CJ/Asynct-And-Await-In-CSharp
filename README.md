@@ -44,7 +44,7 @@ private async Task  methodName()
 
 ```
 There is Two Task Object one is generic and another is not generic<br>
-<kbd>Task<data_type> </kbd> this is generic type if you dont know what is generic plz read this article [Read]<br>
+<kbd>Task<data_type> </kbd> this is generic type if you dont know what is generic plz read this article [Read](https://www.tutorialsteacher.com/csharp/csharp-generics#:~:text=Generic%20means%20the%20general%20form,without%20the%20specific%20data%20type.)<br>
 <kbd>Task </kbd> this is Not generic type, It is used for void methods  [View]<br>
 
 When you call async method in otehr method or event-handler you should be wait until the task is compelete,<br>
