@@ -79,7 +79,7 @@ private async void DisplayName()
 
 Notice : Method Caller Should Have async modifier thats required. if you ommit  The intellicense of c# auto added. 
 Thats All, <br>
-<b style="color: green; font-weight : 700; font-family: poppins">Main Advantage of Async is To Make your app is responsive and un-block when more tasks is in progrress.</b>
+<b style="color: green; font-weight : 700;">Main Advantage of Async is To Make your app is responsive and un-block when more tasks is in progrress.</b>
 
 # Task In Async
 A task in C# is used to implement Task-based Asynchronous Programming , <br>
