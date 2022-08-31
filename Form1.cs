@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace AsyncrnousApp
@@ -18,13 +19,20 @@ namespace AsyncrnousApp
 
         private async void LoadDataAsync(object sender, EventArgs e)
         {
+            //listOfItems.Items.Add("Please Wait.....");
+            //int count = GetItemslenth(fileName.Text);
+            //listOfItems.Items.Clear();
+            //listOfItems.Items.Add(count);
 
-            Task<int> task = GetItemsLengthAsync(fileName.Text);
-            int length = await task;
-
-
+            // async 
+            listOfItems.Items.Add("Please Wait.....");
+            Task<int> count = GetItemslenthAsync(fileName.Text);
+            int countOfTask = await count;
             listOfItems.Items.Clear();
-            listOfItems.Items.Add(length);
+            listOfItems.Items.Add(countOfTask);
+
+            await LoadingValue();
+            MessageBox.Show("All Tasks Are Completed......");
         }
 
         private void Open(object sender, EventArgs e)
@@ -35,70 +43,47 @@ namespace AsyncrnousApp
             }
         }
 
-
-
-        // asynchronous function that returns length of charcts in file
-        private async Task<int> GetItemsLengthAsync(string filename)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            int length = 0;
-            await Task.Run(async () =>
-            {
-                await GetCountDown();
-                StreamReader reader = new StreamReader(filename);
-                length = reader.ReadToEnd().Length;
-
-            });
-
-
-            return length;
+            fileName.Text = @"C:\Users\PC\Documents\textFile.txt";
         }
 
 
 
-        // normal method that returns length of characters in a file
-        private int GetItemsLength(string filename)
+        private int GetItemslenth(string filename)
         {
             int length = 0;
             StreamReader reader = new StreamReader(filename);
             length = reader.ReadToEnd().Length;
-            Task.Delay(5000);
 
+            Thread.Sleep(9000);
             return length;
         }
 
-        private async Task GetTask()
+
+        private async Task<int> GetItemslenthAsync(string filename)
         {
-            int cout = 0;
-            await Task.Run(() =>
+            int length = 0;
+            await Task.Run(async () =>
             {
-                for (int i = 0; i < 100; i++)
-                {
-                    listOfItems.Items.Add("The Total Execution is :" + i);
+                StreamReader reader = new StreamReader(filename);
+                length = reader.ReadToEnd().Length;
 
-                    System.Threading.Thread.Sleep(1000);
-                }
+                await Task.Delay(9000);
             });
-
+            return length;
         }
 
-        private async Task GetCountDown()
+        private async Task LoadingValue()
         {
             await Task.Run(async () =>
             {
-                listOfItems.Items.Add("Please Wait.....");
-                for (int i = 0; i <= 100; i++)
+                for (int i = 1; i <= 100; i++)
                 {
-                    //listOfItems.Items.Add(i);
                     progressBar1.Value = i;
-                    await Task.Delay(70);
-                    if (i >= 95)
-                        await Task.Delay(1000);
+                    await Task.Delay(1000);
                 }
             });
         }
-
-
-
-
     }
 }

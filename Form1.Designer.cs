@@ -38,6 +38,7 @@
             // 
             // saaButton1
             // 
+            this.saaButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.saaButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.saaButton1.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.saaButton1.BackColorAngle = 90F;
@@ -70,6 +71,7 @@
             // 
             // fileName
             // 
+            this.fileName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.fileName.BackColor = System.Drawing.Color.White;
             this.fileName.Border = true;
             this.fileName.BorderActiveColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(173)))), ((int)(((byte)(255)))));
@@ -93,15 +95,17 @@
             // 
             // listOfItems
             // 
+            this.listOfItems.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.listOfItems.FormattingEnabled = true;
             this.listOfItems.ItemHeight = 16;
             this.listOfItems.Location = new System.Drawing.Point(12, 144);
             this.listOfItems.Name = "listOfItems";
-            this.listOfItems.Size = new System.Drawing.Size(559, 212);
+            this.listOfItems.Size = new System.Drawing.Size(559, 292);
             this.listOfItems.TabIndex = 2;
             // 
             // saaButton2
             // 
+            this.saaButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.saaButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.saaButton2.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(158)))), ((int)(((byte)(255)))));
             this.saaButton2.BackColorAngle = 90F;
@@ -134,9 +138,9 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(13, 363);
+            this.progressBar1.Location = new System.Drawing.Point(12, 454);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(558, 56);
+            this.progressBar1.Size = new System.Drawing.Size(559, 47);
             this.progressBar1.TabIndex = 3;
             // 
             // Form1
@@ -153,6 +157,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
         }
