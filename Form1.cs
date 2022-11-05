@@ -73,6 +73,16 @@ namespace AsyncrnousApp
             });
             return length;
         }
+        
+        // upsating 
+        override void loadingAsync(string[] tasks){
+             for (int i = 0; i <tasks.length; i++)
+                {
+                    progressBar1.Value = i;
+                    await Task.Delay(1000);
+                }
+        }
+        // end updating
 
         private async Task LoadingValue()
         {
